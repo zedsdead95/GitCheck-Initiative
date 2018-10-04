@@ -20,7 +20,7 @@
     <h1 class="title">Github analytics</h1>
     <form class="search-bar" id="search-form">
       <input class="search-input form-control" spellcheck="false" autocomplete="off" placeholder="Search a github username"
-        type="text" name="username" value="octocat" />
+        type="text" name="username" />
       <button class="btn icon-button">
         <i class="material-icons">search</i>
       </button>
@@ -37,17 +37,28 @@
       <!-- Profile -->
       <div class="profile-container">
         <div class="profile-picture">
-          <img id="user-avatar" src="https://avatars0.githubusercontent.com/u/583231?s=460&v=4" alt="avatar of the user" />
+          <img id="user-avatar" alt="avatar of the user" />
         </div>
         <div class="profile-body">
-          <h2 id="user-name" class="headline">The Octocat</h2>
-          <span id="user-login" class="body-1 text-secondary">octocat</h4>
+          <h2 id="user-name" class="headline"></h2>
+          <span id="user-login" class="body-1 text-secondary"></h4>
         </div>
       </div>
       <!-- End Profile -->
+
+
+      <!-- Languages chart -->
+      <div class="chart-container">
+        <canvas id="chart-languages"></canvas>
+      </div>
+      <!-- End Languages chart -->
+
     </div>
   </main>
   <!-- End Page content -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+  <script src="/js/app.js"></script>
 </body>
 
 </html>
