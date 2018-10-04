@@ -19,7 +19,7 @@ function getLanguages(username) {
 }
 
 function getGithubColors() {
-  return fetch('/data/github-colors.json')
+  return fetch('data/github-colors.json')
     .then(res => res.json());
 }
 
