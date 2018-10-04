@@ -4,7 +4,7 @@ const baseUrl =  window.location.hostname === 'localhost'
   : 'https://heig-vd-ga-server.herokuapp.com';
 
 
-const defaultSearch = 'paulnta';
+const defaultSearch = 'octocat';
 const searchForm = document.getElementById('search-form');
 let chart = null;
 
