@@ -1,4 +1,4 @@
-# Github analytics light 
+# GitCheck Initiative 
 
 A minimal starter project to practice with [Github REST API](https://developer.github.com/v3/). 
 
