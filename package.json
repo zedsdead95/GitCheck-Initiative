@@ -8,6 +8,7 @@
   "author": "paulnta",
   "license": "ISC",
   "devDependencies": {
+    "alchemyjs": "^0.3.1",
     "live-server": "^1.2.0"
   }
 }

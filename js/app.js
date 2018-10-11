@@ -23,7 +23,8 @@ function getGithubColors() {
     .then(res => res.json());
 }
 
-function updateChart({ labels, data, backgroundColor }) {
+// creates a chart
+/*function updateChart({ labels, data, backgroundColor }) {
   const chartLanguages = document.getElementById('chart-languages');
   const ctx = chartLanguages.getContext('2d');
   const options = {
@@ -65,6 +66,15 @@ function updateChart({ labels, data, backgroundColor }) {
     chart.data.datasets = options.data.datasets;
     chart.update();
   }
+}*/
+
+function updateGraph({ labels, data, backgroundColor }) {
+  alchemy.begin({
+    dataSource: data.languages, 
+    nodeCaption: data., 
+    nodeMouseOver: 'name',
+      cluster: true,
+      clusterColours: ["#1B9E77","#D95F02","#7570B3","#E7298A","#66A61E","#E6AB02"]})
 }
 
 function updateProfile(user) {
@@ -102,12 +112,16 @@ function handleSearch(username) {
       })
 
       updateProfile(user);
-      updateChart({ labels, data, backgroundColor });
+      updataGraph({ labels, data, backgroundColor });
     })
     .catch(err => {
       updatePlaceholder('Oups, an error occured. Sorry, this app sucks...', 'text-error');
       console.error('Cannot fetch data', err)
     })
+}
+
+function loadingMessage(){
+  const message = " A Git power comes with Git responsability"
 }
 
 searchForm.addEventListener('submit', function (e) {
