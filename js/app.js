@@ -1,3 +1,8 @@
+//import App from ('reactApp')
+//import React from ('react')
+//import ReactDOM from ('ReactDOM')
+import Vue from('Vue')
+
 // https://medium.freecodecamp.org/environment-settings-in-javascript-apps-c5f9744282b6
 const baseUrl =  window.location.hostname === 'localhost'
   ? 'http://localhost:3000'
@@ -21,61 +26,7 @@ function getLanguages(username) {
 function getGithubColors() {
   return fetch('data/github-colors.json')
     .then(res => res.json());
-}
-
-// creates a chart
-/*function updateChart({ labels, data, backgroundColor }) {
-  const chartLanguages = document.getElementById('chart-languages');
-  const ctx = chartLanguages.getContext('2d');
-  const options = {
-    type: 'bar',
-    data: {
-      labels,
-      datasets: [{
-        data,
-        backgroundColor,
-      }],
-    },
-    options: {
-      legend: {
-        display: false
-      },
-      scales: {
-        xAxes: [{
-          ticks: {
-            fontFamily: "'Roboto Mono'",
-            fontSize: 12,
-          },
-          gridLines: {
-            display: false,
-          }
-        }],
-        yAxes: [{
-          ticks: {
-            fontFamily: "'Roboto Mono'",
-          }
-        }]
-      },
-    }
-  }
-
-  if (!chart) {
-    chart = new Chart(ctx, options);
-  } else {
-    chart.data.labels = options.data.labels;
-    chart.data.datasets = options.data.datasets;
-    chart.update();
-  }
-}*/
-
-function updateGraph({ labels, data, backgroundColor }) {
-  alchemy.begin({
-    dataSource: data.languages, 
-    nodeCaption: data., 
-    nodeMouseOver: 'name',
-      cluster: true,
-      clusterColours: ["#1B9E77","#D95F02","#7570B3","#E7298A","#66A61E","#E6AB02"]})
-}
+};
 
 function updateProfile(user) {
   const avatar = document.getElementById('user-avatar');
@@ -112,7 +63,7 @@ function handleSearch(username) {
       })
 
       updateProfile(user);
-      updataGraph({ labels, data, backgroundColor });
+
     })
     .catch(err => {
       updatePlaceholder('Oups, an error occured. Sorry, this app sucks...', 'text-error');

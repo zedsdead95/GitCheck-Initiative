@@ -14,21 +14,14 @@
 
 <body>
 
-  <!-- App Bar -->
-  <header class="app-bar">
-    <img src="/images/logo.svg" alt="github analytics" class="logo" />
-    <h1 class="title">Github analytics</h1>
-    <form class="search-bar" id="search-form">
-      <input class="search-input form-control" spellcheck="false" autocomplete="off" placeholder="Search a github username"
-        type="text" name="username" />
-      <button class="btn icon-button">
-        <i class="material-icons">search</i>
-      </button>
-    </form>
-    <!--<h1> A Git power comes with Git responsability </h1>-->
+  <!-- Head Bar -->
+  <header class="header">
+        <img src="/images/logo.png" alt="github analytics" class="logo" />
+        <div>
+            <h1 class="title">GitCheck Initiative<br> </h1>
+            <h1 class="slogan">A Git power comes with Git responsability</h1>
+        </div>
   </header>
-  <!-- End App Bar -->
-
   <!-- Page content -->
   <main class="page-content">
     <div class="card container">
@@ -47,7 +40,6 @@
       </div>
       <!-- End Profile -->
 
-
       <!-- Languages chart 
       <div class="chart-container">
         <canvas id="chart-languages"></canvas>
@@ -56,7 +48,12 @@
 
       <!-- Languages alchemy graph -->
       <div class="chart-container">
-        <canvas id="chart-languages"></canvas>
+        <ul id="chart-languages">
+          <h1> {{message}}</h1>
+          <li v-for="todo in todos">
+            {{ todo.file }} {{todo.text}}
+          </li>
+        </ul>
       </div>
       <!-- Languages alchemy graph -->
 
@@ -65,8 +62,37 @@
   </main>
   <!-- End Page content -->
 
+    <!-- Search Bar -->
+    <footer class="Bar">
+      <form class="search-bar" id="search-form">
+        <input class="search-input form-control" spellcheck="false" autocomplete="off" placeholder="Search a github username"
+          type="text" name="username" />
+        <input class="search-input form-control" spellcheck="false" autocomplete="off" placeholder="Search a github repository"
+          type="text" name="repository"/>
+        <button class="btn icon-button">
+          <i class="material-icons">search</i>
+        </button>
+      </form>
+    </footer>
+    <!-- End Search Bar -->
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+  <script src="https://unpkg.com/vue@2.0.3/dist/vue.js"></script>
   <script src="/js/app.js"></script>
+  <script> 
+  new Vue({
+    el: '#chart-languages',
+    data: {
+      message: 'Is you Repo well documented ?',
+      todos: [
+        {file: 'ReadMe', text: 'Ton repo ne contient pas de README dioude are u kidding me ?'},
+        {file: 'License' , text: 'Sans une License (MIT...) tu perds en creidibilite couz'},
+        {file: 'Conduction', text: 'Petit rebelle, il te faut une ligne de conduite !'},
+      ]
+    }
+  });
+  </script>
+  
 </body>
 
 </html>

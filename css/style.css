@@ -8,7 +8,7 @@ html {
 
 body {
   font-family: 'Roboto Mono', monospace;
-  background: #F1F3F4;
+  background: rgb(139, 182, 203);
 }
 
 * {
@@ -33,7 +33,7 @@ i {
   display: flex;
   align-items: center;
   padding: 0 16px;
-  background: #fff;
+  background: rgb(18, 22, 22);
   box-shadow: 0px 2px 40px 0px rgba(0,0,0,0.08);
 }
 
@@ -41,6 +41,7 @@ i {
   margin-right: 64px;
   margin-bottom: 0;
 }
+
 
 .page-content {
   padding: 24px 16px;
@@ -51,21 +52,24 @@ i {
   margin: 0 auto;
 }
 
+
 .search-bar {
+  text-align: center;
   padding-left: 12px;
   padding-right: 4px;
-  border-radius: 2px;
-  display: flex;
+  border-radius: 5px;
   align-items: center;
   background: rgba(0, 0, 0, 0.03);
+  margin: 0 auto;
 }
 
 .search-input {
   width: 300px;
+  background: #EA1844;
 }
 
 .logo {
-  height: 32px;
+  height: 80px;
   margin-right: 16px;
 }
 
@@ -102,7 +106,7 @@ i {
 
 .card {
   padding: 16px;
-  background: #fff;
+  background: #A9A9A9;
   border-radius: 2px;
   box-shadow: 0px 2px 40px 0px rgba(0,0,0,0.08);
 }
@@ -150,14 +154,31 @@ i {
  * =========================================
  */
 .title {
-  font-size: 1.25em;
+  padding-top: 10px;
+  font-size: 1.4em;
   font-weight: 500;
   white-space: nowrap;
+}
+
+.slogan{
+  font-size: 1.8em;
+  font-weight: 500;
+  white-space: nowrap;
+  font-style: oblique;
 }
 
 .headline {
   font-size: 1.5em;
   font-weight: 400;
+}
+
+header{
+  display: flex;
+  background-color: white;
+}
+
+header div{
+  flex : 10;
 }
 
 .body-1 {
