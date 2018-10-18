@@ -7,6 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="/css/normalize.css">
   <link rel="stylesheet" type="text/css" href="/css/style.css">
   <title>Github analytics light</title>
@@ -24,6 +25,7 @@
   </header>
   <!-- Page content -->
   <main class="page-content">
+    <h1 class="head-question"  > Is your Git repo well documented ? </h1>
     <div class="card container">
 
       <div id="placeholder"></div>
@@ -48,12 +50,26 @@
 
       <!-- Languages alchemy graph -->
       <div class="chart-container">
-        <ul id="chart-languages">
-          <h1> {{message}}</h1>
-          <li v-for="todo in todos">
-            {{ todo.file }} {{todo.text}}
-          </li>
-        </ul>
+        <div  class="chart-languages"></div>
+              <h3> Well here is you grade : </h3>
+              <div class="list-group">
+                  <a href="#" class="list-group-item">
+                    <h4 class="list-group-item-heading">ReadMe</h4>
+                    <p class="list-group-item-text">Ton repo ne contient pas de README dioude are u kidding me ?</p>
+                  </a>
+                  <a href="#" class="list-group-item">
+                    <h4 class="list-group-item-heading">License</h4>
+                    <p class="list-group-item-text">Sans une License (MIT...) tu perds en creidibilite couz</p>
+                  </a>
+                  <a href="#" class="list-group-item">
+                    <h4 class="list-group-item-heading">Conduction</h4>
+                    <p class="list-group-item-text">Petit rebelle, il te faut une ligne de conduite !</p>
+                  </a>
+              </div>
+            </div>
+        </div>
+
+              
       </div>
       <!-- Languages alchemy graph -->
 
@@ -77,6 +93,8 @@
     <!-- End Search Bar -->
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="https://unpkg.com/vue@2.0.3/dist/vue.js"></script>
   <script src="/js/app.js"></script>
   <script> 

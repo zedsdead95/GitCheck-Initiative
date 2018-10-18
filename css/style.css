@@ -68,6 +68,11 @@ i {
   background: #EA1844;
 }
 
+.list-group-item{
+  width: 700px;
+
+}
+
 .logo {
   height: 80px;
   margin-right: 16px;
@@ -179,6 +184,14 @@ header{
 
 header div{
   flex : 10;
+}
+
+.head-question{
+  font-size: 2.2em;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-style: italic;
+  color: #EFFFFFFF
 }
 
 .body-1 {

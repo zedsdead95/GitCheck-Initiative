@@ -38,6 +38,24 @@ function updateProfile(user) {
   login.innerHTML = user.login;
 }
 
+function updateList(){
+  /*new Vue({
+    el: '#chart-languages',
+    data: {
+      message: 'Is you Repo well documented ?',
+      todos: [
+        {file: 'ReadMe', text: 'Ton repo ne contient pas de README dioude are u kidding me ?'},
+        {file: 'License' , text: 'Sans une License (MIT...) tu perds en creidibilite couz'},
+        {file: 'Conduction', text: 'Petit rebelle, il te faut une ligne de conduite !'},
+      ]
+    }
+  });*/
+
+  
+}
+
+updateList();
+
 function updatePlaceholder(content, className = 'text-secondary') {
   const placeholder = document.getElementById('placeholder');
   placeholder.className = className;
@@ -63,7 +81,7 @@ function handleSearch(username) {
       })
 
       updateProfile(user);
-
+      updateList()
     })
     .catch(err => {
       updatePlaceholder('Oups, an error occured. Sorry, this app sucks...', 'text-error');
