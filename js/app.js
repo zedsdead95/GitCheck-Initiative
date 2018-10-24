@@ -1,7 +1,7 @@
 //import App from ('reactApp')
 //import React from ('react')
 //import ReactDOM from ('ReactDOM')
-import Vue from('Vue')
+//import Vue from('Vue')
 
 // https://medium.freecodecamp.org/environment-settings-in-javascript-apps-c5f9744282b6
 const baseUrl =  window.location.hostname === 'localhost'
@@ -9,24 +9,22 @@ const baseUrl =  window.location.hostname === 'localhost'
   : 'https://heig-vd-ga-server.herokuapp.com';
 
 
-const defaultSearch = 'octocat';
+const defaultSearchUser = 'babel';
+const defaultSearchRepo = 'babel';
 const searchForm = document.getElementById('search-form');
 let chart = null;
 
+// recupere infos de l'utilisateur (photo de profil + username)
 function getUser(username) {
   return fetch(`${baseUrl}/users/${username}`)
     .then(res => res.json());
 }
 
-function getLanguages(username) {
-  return fetch(`${baseUrl}/languages/${username}`)
+function getRepoInfos(username,reponame) {
+  return fetch(`${baseUrl}/check/${username}/${reponame}`)
     .then(res => res.json());
 }
 
-function getGithubColors() {
-  return fetch('data/github-colors.json')
-    .then(res => res.json());
-};
 
 function updateProfile(user) {
   const avatar = document.getElementById('user-avatar');
@@ -51,10 +49,10 @@ function updateList(){
     }
   });*/
 
+  const eval = document.getElementById('repo-evaluation');
+  
   
 }
-
-updateList();
 
 function updatePlaceholder(content, className = 'text-secondary') {
   const placeholder = document.getElementById('placeholder');
@@ -62,26 +60,27 @@ function updatePlaceholder(content, className = 'text-secondary') {
   placeholder.innerHTML = content;
 }
 
-function handleSearch(username) {
-  updatePlaceholder('Loading...');
+function handleSearch(username,reponame) {
+  updatePlaceholder('Loading for a repo to judge...');
 
   return Promise.all([
     getUser(username),
-    getLanguages(username),
-    getGithubColors(),
+    getRepoInfos(username,reponame), // recupere les infos de l'utilisateur
+    console.log(getRepoInfos(username,reponame)),
   ])
-    .then(([user, languages, colors]) => {
-      updatePlaceholder('');
+    .then(([user, repodata, colors]) => {
+      updatePlaceholder('');        
 
-      const labels = Object.keys(languages);
-      const data = labels.map(label => languages[label]);
-      const backgroundColor = labels.map(label => {
+      //const labels = Object.keys(languages);
+      //const data = labels.map(label => languages[label]);
+      /*const backgroundColor = labels.map(label => {
         const color = colors[label] ? colors[label].color : null
         return color || '#000';
-      })
+      })*/
 
       updateProfile(user);
-      updateList()
+      //updateList(repodata)
+    
     })
     .catch(err => {
       updatePlaceholder('Oups, an error occured. Sorry, this app sucks...', 'text-error');
@@ -90,17 +89,20 @@ function handleSearch(username) {
 }
 
 function loadingMessage(){
-  const message = " A Git power comes with Git responsability"
+  const message = " loading your grade...";
 }
 
 searchForm.addEventListener('submit', function (e) {
   e.preventDefault();
-  const username = this.elements['username'].value;
-  if (!username) {
+  const username = this.elements['username'].value; // get user
+  const reponame = this.elements['reponame'].value; // get repo
+  if (!(username && reponame)) {
     return;
   }
-  handleSearch(username);
+  handleSearch(username,reponame);
 });
 
-handleSearch(defaultSearch);
+//handleSearch(defaultSearchUser,defaultSearchRepo);
 
+//getUser('zedsdead95');
+//getRepoInfos('zedsdead95','GitCheck-express-server');

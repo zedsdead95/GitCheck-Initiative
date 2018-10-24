@@ -8,7 +8,8 @@ html {
 
 body {
   font-family: 'Roboto Mono', monospace;
-  background: rgb(139, 182, 203);
+  background-image: url("/images/bg-about.png");
+
 }
 
 * {
@@ -44,7 +45,7 @@ i {
 
 
 .page-content {
-  padding: 24px 16px;
+  padding: 24px 16px;  
 }
 
 .container {
@@ -63,7 +64,12 @@ i {
   margin: 0 auto;
 }
 
-.search-input {
+.search-input1 {
+  width: 300px;
+  background: #EA1844;
+}
+
+.search-input2 {
   width: 300px;
   background: #EA1844;
 }
@@ -71,6 +77,14 @@ i {
 .list-group-item{
   width: 700px;
 
+}
+.chart-container{
+  align-content: center;
+  align-items: center;
+}
+
+.list-group{
+  align-items: center
 }
 
 .logo {
@@ -111,7 +125,7 @@ i {
 
 .card {
   padding: 16px;
-  background: #A9A9A9;
+  background:rgb(139, 182, 203);
   border-radius: 2px;
   box-shadow: 0px 2px 40px 0px rgba(0,0,0,0.08);
 }
@@ -191,7 +205,7 @@ header div{
   text-align: center;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-style: italic;
-  color: #EFFFFFFF
+  color: rgb(43, 99, 99)
 }
 
 .body-1 {

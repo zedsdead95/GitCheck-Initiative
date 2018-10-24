@@ -14,7 +14,6 @@
 </head>
 
 <body>
-
   <!-- Head Bar -->
   <header class="header">
         <img src="/images/logo.png" alt="github analytics" class="logo" />
@@ -23,6 +22,21 @@
             <h1 class="slogan">A Git power comes with Git responsability</h1>
         </div>
   </header>
+
+    <!-- Search Bar -->
+    <footer class="Bar">
+      <form class="search-bar" id="search-form">
+        <input class="search-input1 form-control" spellcheck="false" autocomplete="off" placeholder="Search a github username"
+          type="text" name="username" />
+        <input class="search-input2 form-control" spellcheck="false" autocomplete="off" placeholder="Search a github repository"
+          type="text" name="reponame"/>
+        <button class="btn icon-button">
+          <i class="material-icons">search</i>
+        </button>
+      </form>
+    </footer>
+    <!-- End Search Bar -->
+
   <!-- Page content -->
   <main class="page-content">
     <h1 class="head-question"  > Is your Git repo well documented ? </h1>
@@ -48,22 +62,46 @@
       </div>
       End Languages chart -->
 
-      <!-- Languages alchemy graph -->
+      <!--  Vuejs list graph -->
       <div class="chart-container">
-        <div  class="chart-languages"></div>
+        <div  class="repo-evaluation"></div>
               <h3> Well here is you grade : </h3>
               <div class="list-group">
                   <a href="#" class="list-group-item">
                     <h4 class="list-group-item-heading">ReadMe</h4>
-                    <p class="list-group-item-text">Ton repo ne contient pas de README dioude are u kidding me ?</p>
+                    <p id="reademe-msg"class="list-group-item-text jumbotron">Ton repo ne contient pas de README dioude are u kidding me ?</p>
                   </a>
                   <a href="#" class="list-group-item">
                     <h4 class="list-group-item-heading">License</h4>
-                    <p class="list-group-item-text">Sans une License (MIT...) tu perds en creidibilite couz</p>
+                    <p id="license-msg"class="list-group-item-text jumbotron">Sans une License (MIT...) tu perds en credibilite...</p>
                   </a>
                   <a href="#" class="list-group-item">
-                    <h4 class="list-group-item-heading">Conduction</h4>
-                    <p class="list-group-item-text">Petit rebelle, il te faut une ligne de conduite !</p>
+                    <h4 class="list-group-item-heading ">Conduction</h4>
+                    <p id="conduction-msg" class="list-group-item-text jumbotron">Petit rebelle, il te faut une ligne de conduite !</p>
+                  </a>
+                  <a href="#" class="list-group-item">
+                    <h4 class="list-group-item-heading ">Contributing</h4>
+                    <p id="conduction-msg" class="list-group-item-text jumbotron">Ahlala, comment vas tu ameliorer ton projet sans fournir un guide pour les contributeurs !</p>
+                  </a>
+                  <a href="#" class="list-group-item ">
+                    <h4 class="list-group-item-heading ">Linter   </h4>
+                    <p id="conduction-msg" class="list-group-item-text jumbotron">Un fichier linter rendrait ton programme bein plus...</p>
+                  </a>
+                  <a href="#" class="list-group-item">
+                    <h4 class="list-group-item-heading ">Test unistaires</h4>
+                    <p id="conduction-msg" class="list-group-item-text jumbotron">Oups ! Il me semble que tu ne possède pas de dossier de tests pour verifier le bon fonctionnement de ton code source.</p>
+                  </a>
+                  <a href="#" class="list-group-item">
+                    <h4 class="list-group-item-heading ">Issues</h4>
+                    <p id="conduction-msg" class="list-group-item-text jumbotron">Ton projet possede des issues qui n'ont toujours pas ete regler.</p>
+                  </a>
+                  <a href="#" class="list-group-item">
+                    <h4 class="list-group-item-heading">Dependances </h4>
+                    <p id="conduction-msg" class="list-group-item-text jumbotron">Les dependances mon cher, les dependances ne sont pas a jour.</p>
+                  </a>
+                  <a href="#" class="list-group-item">
+                    <h4 class="list-group-item-heading">Project name</h4>
+                    <p id="conduction-msg" class="list-group-item-text jumbotron">Le nom de ton repo est beaucoup trop long, rends le plus explicite et plus simple pour une meilleur visaulite !</p>
                   </a>
               </div>
             </div>
@@ -78,19 +116,7 @@
   </main>
   <!-- End Page content -->
 
-    <!-- Search Bar -->
-    <footer class="Bar">
-      <form class="search-bar" id="search-form">
-        <input class="search-input form-control" spellcheck="false" autocomplete="off" placeholder="Search a github username"
-          type="text" name="username" />
-        <input class="search-input form-control" spellcheck="false" autocomplete="off" placeholder="Search a github repository"
-          type="text" name="repository"/>
-        <button class="btn icon-button">
-          <i class="material-icons">search</i>
-        </button>
-      </form>
-    </footer>
-    <!-- End Search Bar -->
+
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
