@@ -76,7 +76,10 @@ i {
 
 .list-group-item{
   width: 700px;
+}
 
+.list-group-item-text{
+  height: 0.6em;
 }
 .chart-container{
   align-content: center;
@@ -84,12 +87,19 @@ i {
 }
 
 .list-group{
-  align-items: center
+  align-items: center;
+  padding-left: 80px;
 }
 
 .logo {
   height: 80px;
   margin-right: 16px;
+}
+
+.WRLogo{
+  height: 20px;
+  width: 20px;
+  transform: translateX(600px) translateY(-50px);
 }
 
 /**
@@ -123,9 +133,8 @@ i {
  * =========================================
  */
 
-.card {
+ .card {
   padding: 16px;
-  background:rgb(139, 182, 203);
   border-radius: 2px;
   box-shadow: 0px 2px 40px 0px rgba(0,0,0,0.08);
 }
@@ -219,4 +228,12 @@ header div{
 
 .text-error {
   color: #EA1844;
+}
+
+.credits{
+  color: rgb(43, 99, 99);
+  font: bold;
+  font-family: monospace;
+  text-align: center;
+  font-size: 2.2em;
 }

@@ -36,7 +36,28 @@ function updateProfile(user) {
   login.innerHTML = user.login;
 }
 
-function updateList(){
+function updateList(repodata){
+  //const values = Object.values(repodata);
+  const readme = document.getElementById('readme-msg');
+    // TODO check if contains readme and adapt message (good or bad) and do that for all the list
+
+    //if list contains or not readme then adapt the message
+  readme.innerHTML = repodata[0];
+  const license = document.getElementById('license-msg');
+  const conduction = document.getElementById('conduction-msg');
+  conduction.innerHTML = repodata[1]; 
+  const contributing = document.getElementById('contributing-msg');
+  contributing = repodata[2];
+  const linter = document.getElementById('linter-msg-msg');
+  linter = repodata[3];
+  const test = document.getElementById('test-msg');
+  test = repodata[4];
+  const issues = document.getElementById('issues-msg');
+  const dependences = document.getElementById('dependences-msg');
+  const projectname = document.getElementById('project-name-msg');
+
+
+
   /*new Vue({
     el: '#chart-languages',
     data: {
@@ -49,7 +70,7 @@ function updateList(){
     }
   });*/
 
-  const eval = document.getElementById('repo-evaluation');
+  //const eval = document.getElementById('repo-evaluation');
   
   
 }
@@ -65,21 +86,14 @@ function handleSearch(username,reponame) {
 
   return Promise.all([
     getUser(username),
-    getRepoInfos(username,reponame), // recupere les infos de l'utilisateur
-    console.log(getRepoInfos(username,reponame)),
+    getRepoInfos(username,reponame) // recupere les infos de l'utilisateur
   ])
-    .then(([user, repodata, colors]) => {
+    .then(([user, repodata]) => {
       updatePlaceholder('');        
 
-      //const labels = Object.keys(languages);
-      //const data = labels.map(label => languages[label]);
-      /*const backgroundColor = labels.map(label => {
-        const color = colors[label] ? colors[label].color : null
-        return color || '#000';
-      })*/
 
       updateProfile(user);
-      //updateList(repodata)
+      updateList(repodata);
     
     })
     .catch(err => {
@@ -102,7 +116,4 @@ searchForm.addEventListener('submit', function (e) {
   handleSearch(username,reponame);
 });
 
-//handleSearch(defaultSearchUser,defaultSearchRepo);
-
-//getUser('zedsdead95');
-//getRepoInfos('zedsdead95','GitCheck-express-server');
+handleSearch(defaultSearchUser,defaultSearchRepo);
