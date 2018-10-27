@@ -124,7 +124,7 @@ function handleSearch(username,reponame) {
 }
 
 function loadingMessage(){
-  const message = " loading your grade...";
+  const message = " loading your grade..."; 
 }
 
 searchForm.addEventListener('submit', function (e) {
@@ -138,3 +138,10 @@ searchForm.addEventListener('submit', function (e) {
 });
 
 handleSearch(defaultSearchUser,defaultSearchRepo);
+
+
+module.exports = {
+  handleSearch,
+  updatePlaceholder,
+  updateProfile,
+};
