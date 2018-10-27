@@ -22,7 +22,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 i {
-  color: rgba(0, 0, 0, 0.54);
+  color:white;
 }
 
 /**
@@ -169,6 +169,7 @@ i {
 .icon-button {
   padding: 7px;
   border-radius: 50%;
+  color: white;
 }
 
 .chart-container {

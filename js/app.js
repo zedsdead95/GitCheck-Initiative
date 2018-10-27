@@ -2,12 +2,21 @@
 //import React from ('react')
 //import ReactDOM from ('ReactDOM')
 //import Vue from('Vue')
+//import { readMeComments} from './utils'
 
 // https://medium.freecodecamp.org/environment-settings-in-javascript-apps-c5f9744282b6
 const baseUrl =  window.location.hostname === 'localhost'
   ? 'http://localhost:3000'
   : 'https://heig-vd-ga-server.herokuapp.com';
 
+  const readMeComments = ["Well done ! Your repo does contain a ReadMe file."
+  ,"Ton repo ne contient pas de README dioude are u kidding me ?"];
+
+  const licenseComments = [" Bien une license !","Sans une License (MIT...) tu perds en credibilite..."];
+  const conductComments = [" Genial ! Tu as pensé à la ligne de conduite ! !","Petit rebelle, il te faut une ligne de conduite !"];
+  const contributingComments = [" Bien un guide pour les contributeurs !"
+                               ,"Ahlala, comment vas tu ameliorer ton projet sans fournir un guide pour les contributeurs !"];
+  const linterComments = [" Bien une fichier linter !","Un fichier linter rendrait ton programme bein plus propre et conventionné..."];
 
 const defaultSearchUser = 'babel';
 const defaultSearchRepo = 'babel';
@@ -37,42 +46,54 @@ function updateProfile(user) {
 }
 
 function updateList(repodata){
-  //const values = Object.values(repodata);
+  
+  // TODO check if contains readme and adapt message (good or bad) and do that for all the list
   const readme = document.getElementById('readme-msg');
-    // TODO check if contains readme and adapt message (good or bad) and do that for all the list
 
     //if list contains or not readme then adapt the message
-  readme.innerHTML = repodata[0];
+  updateLabel(readme,repodata,'README',readMeComments,'imgReadMe');
+
   const license = document.getElementById('license-msg');
+  updateLabel(license,repodata,'LICENSE',licenseComments,'imgLicense')
+
   const conduction = document.getElementById('conduction-msg');
-  conduction.innerHTML = repodata[1]; 
+  updateLabel(conduction,repodata,'CONDUCT',conductComments,'imgConduction')
+
   const contributing = document.getElementById('contributing-msg');
-  contributing = repodata[2];
-  const linter = document.getElementById('linter-msg-msg');
-  linter = repodata[3];
+  updateLabel(contributing,repodata,'CONTRIBUTING',contributingComments,'imgContributing')
+
+  const linter = document.getElementById('linter-msg');
+  updateLabel(linter,repodata,'eslint',linterComments,'imgLinter')
+
   const test = document.getElementById('test-msg');
-  test = repodata[4];
-  const issues = document.getElementById('issues-msg');
+  updateLabel(linter,repodata,'test',linterComments,'imgTest')
+
+  // TODO when we have more time (never obviously...)
+
+  /*const issues = document.getElementById('issues-msg');
+  updateLabel(issues,repodata,'eslint',issuesComments)
+
   const dependences = document.getElementById('dependences-msg');
+
   const projectname = document.getElementById('project-name-msg');
+  */
+}
 
+function updateLabel(labelToModify,repodata,info,comment,imageToModify){
+  let contains = false;
+  // if contains the desired label then puts a good comment
+  repodata.forEach(word => {
+      if (word.includes(info)) {
+        labelToModify.innerHTML = comment[0];
+        document.getElementById(imageToModify).src = '/images/true.png';
+        contains = true;
+      }
+  });
+  // otherwise puts a negative comment
+  if (!contains){
+    labelToModify.innerHTML = comment[1];
 
-
-  /*new Vue({
-    el: '#chart-languages',
-    data: {
-      message: 'Is you Repo well documented ?',
-      todos: [
-        {file: 'ReadMe', text: 'Ton repo ne contient pas de README dioude are u kidding me ?'},
-        {file: 'License' , text: 'Sans une License (MIT...) tu perds en creidibilite couz'},
-        {file: 'Conduction', text: 'Petit rebelle, il te faut une ligne de conduite !'},
-      ]
-    }
-  });*/
-
-  //const eval = document.getElementById('repo-evaluation');
-  
-  
+  }
 }
 
 function updatePlaceholder(content, className = 'text-secondary') {
