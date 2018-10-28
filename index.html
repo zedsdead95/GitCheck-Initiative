@@ -26,6 +26,7 @@
     <!-- Search Bar -->
     <footer class="Bar">
       <form class="search-bar" id="search-form">
+        <div class ="search-div">
         <input class="search-input1 form-control" spellcheck="false" autocomplete="off" placeholder="Search a github username"
           type="text" name="username" />
         <input class="search-input2 form-control" spellcheck="false" autocomplete="off" placeholder="Search a github repository"
@@ -33,6 +34,7 @@
         <button class="btn icon-button">
           <i class="material-icons">search</i>
         </button>
+      </div>
       </form>
     </footer>
     <!-- End Search Bar -->
@@ -42,7 +44,7 @@
     <h1 class="head-question"  > Is your Git repo well documented ? </h1>
     <div class="card container">
 
-      <div id="placeholder"></div>
+      <h3 id="placeholder"></h3>
 
       <!-- Profile -->
       <div class="profile-container">
@@ -65,7 +67,7 @@
       <!--  Vuejs list graph -->
       <div class="chart-container">
         <div  class="repo-evaluation"></div>
-              <h3> Well here is you grade : </h3>
+              <h3 id="grade"></h3>
               <div class="list-group">
                   <a href="#" class="list-group-item">
                     <h4 class="list-group-item-heading">ReadMe</h4>
@@ -94,21 +96,9 @@
 
                   </a>
                   <a href="#" class="list-group-item">
-                    <h4 class="list-group-item-heading ">Test unistaires</h4>
-                    <p id="test-msg" class="list-group-item-text jumbotron">Oups ! Il me semble que tu ne possède pas de dossier de tests pour verifier le bon fonctionnement de ton code source.</p>
+                    <h4 class="list-group-item-heading ">Test unitaires</h4>
+                    <p id="test-msg" class="list-group-item-text jumbotron"></p>
                     <img id="imgTest"src="/images/false.png" alt="Yeeeah" class="WRLogo" />
-                  </a>
-                  <a href="#" class="list-group-item">
-                    <h4 class="list-group-item-heading ">Issues</h4>
-                    <p id="issues-msg" class="list-group-item-text jumbotron">Ton projet possede des issues qui n'ont toujours pas ete regler.</p>
-                  </a>
-                  <a href="#" class="list-group-item">
-                    <h4 class="list-group-item-heading">Dependences </h4>
-                    <p id="dependences-msg" class="list-group-item-text jumbotron">Les dependances mon cher, les dependances ne sont pas a jour.</p>
-                  </a>
-                  <a href="#" class="list-group-item">
-                    <h4 class="list-group-item-heading">Project name</h4>
-                    <p id="project-name-msg" class="list-group-item-text jumbotron">Le nom de ton repo est beaucoup trop long, rends le plus explicite et plus simple pour une meilleur visaulite !</p>
                   </a>
               </div>
             </div>

@@ -21,9 +21,13 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0 0 0.35em 0;
 }
 
-i {
+.icon-button {
   color:white;
+  transform: translate(1100px,-70px);
+  height: 45px;
+  width: 45px;
 }
+
 
 /**
  * Layout
@@ -55,24 +59,28 @@ i {
 
 
 .search-bar {
-  text-align: center;
-  padding-left: 12px;
-  padding-right: 4px;
-  border-radius: 5px;
-  align-items: center;
   background: rgba(0, 0, 0, 0.03);
-  margin: 0 auto;
 }
 
 .search-input1 {
-  width: 300px;
+  width: 400px;
   background: #EA1844;
+  transform: translate(200px);
 }
 
 .search-input2 {
-  width: 300px;
+  width: 400px;
   background: #EA1844;
+  transform: translate(650px,-35px);
+  font-weight: 300;
+  
 }
+
+input[type="text"]
+{
+    font-size:22px;
+    color: wheat;
+  }
 
 .list-group-item{
   width: 700px;
@@ -97,8 +105,8 @@ i {
 }
 
 .WRLogo{
-  height: 20px;
-  width: 20px;
+  height: 30px;
+  width: 30px;
   transform: translateX(600px) translateY(-50px);
 }
 
@@ -199,6 +207,7 @@ i {
 .headline {
   font-size: 1.5em;
   font-weight: 400;
+  color: black;
 }
 
 header{
@@ -224,7 +233,7 @@ header div{
 }
 
 .text-secondary {
-  color: rgba(0, 0, 0, 0.54);
+  color: rgba(131, 139, 25, 0.54);
 }
 
 .text-error {
