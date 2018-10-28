@@ -8,7 +8,7 @@
 
 GitCheck est une application WEB permettant de visualiser la qualité d'un repo Github. Pour cela nous analysons la présence ou non de divers fichiers et dossiers qu'un bon projet devrait contenir, selon notre propre apréciation ainsi que celle de [Open Source Guides](https://opensource.guide/starting-a-project/#your-pre-launch-checklist). Cela comprend notamment la présence ou non d'un fichier README, d'un linter ou encore d'un répertoire de test.
 
-Le projet est constitué d'une partie client et d'une partie serveur. Le client contient une page web dynamique qui lance des requêtes au serveur selon les informations entrées par l'utilisateur. Le serveur utilise la Github API pour récupérer sur Github les données demandées, les traite et envoie une réponse au client. Ce dernier peut finalement consulter les résultats de sa demande sur une interface attractive et conviviale. Il verra notamment quelles fichiers sont présents et dans le cas ou certains seraient absents, pourquoi ils sont importants.
+Le projet est constitué d'une partie [client](https://github.com/zedsdead95/GitCheck-Initiative) et d'une partie [serveur](https://github.com/zedsdead95/GitCheck-express-server). Le client contient une page web dynamique qui lance des requêtes au serveur selon les informations entrées par l'utilisateur. Le serveur utilise la Github API pour récupérer sur Github les données demandées, les traite et envoie une réponse au client. Ce dernier peut finalement consulter les résultats de sa demande sur une interface attractive et conviviale. Il verra notamment quelles fichiers sont présents et dans le cas ou certains seraient absents, pourquoi ils sont importants.
 
 ## Déploiement
 
