@@ -11,14 +11,14 @@ const baseUrl =  window.location.hostname === 'localhost'
   ? 'http://localhost:3000'
   : 'https://heig-vd-ga-server.herokuapp.com';
 
-const readMeComments = ["Well done ! Your repo does contain a ReadMe file."
-  ,"Ton repo ne contient pas de README dioude are u kidding me ?"];
-const licenseComments = [" Bien une license !","Sans une License (MIT...) tu perds en credibilite..."];
-const conductComments = [" Genial ! Tu as pensé à la ligne de conduite ! !","Petit rebelle, il te faut une ligne de conduite !"];
-const contributingComments = [" Bien un guide pour les contributeurs !"
-                               ,"Ahlala, comment vas tu ameliorer ton projet sans fournir un guide pour les contributeurs !"];
-const linterComments = [" Bien un fichier linter !","Un fichier linter rendrait ton programme bein plus propre et conventionné..."];
-const testComments = ["Excellent ! tu as pensé aux tests unitaires: On est jamais à l'abris de bugs et d'erreurs !","Oups ! Il me semble que tu ne possède pas de dossier de tests pour verifier le bon fonctionnement de ton code source."]
+const readMeComments = ["Well done ! Your repo does contain a README file."
+  ,"Your repository does not contain a README file. README file is essential to enable collaborator to improve your project or just simply help users to follow advices and installation procedure."];
+const licenseComments = [" Good ! You did think of a license !","Without a license (MIT,Apache...) your project looses some credibility... Add a license."];
+const conductComments = [" Great ! You specified a  conduct line !","You sneaky pete, you need a conduct line for your project !"];
+const contributingComments = [" Amazing. A contributing file is indeed a must to guide other collaborators !"
+                               ,"Oh dear... how are you gonna improve your project without a guide for other collaborators !"];
+const linterComments = [" Well done for adding a linter file !","A linter file would set your project code as a code following great coding conventions..."];
+const testComments = ["Excellent ! You thought of unit tests. We are never safe from bugs and errors.","Oups ! It seems like you do not have a test folder. How are you gonna spare your project from bugs ?"]
 const issuesComments = ["","Ton projet possede des issues qui n'ont toujours pas ete regler."]
 const dependencesComments =["Bien joué, tes dependances sont a jour !","Les dependances mon cher, les dependances ne sont pas a jour."]
 const projectComments =["Le nom du projet est assez explicite, c'est super !","Le nom de ton repo est beaucoup trop long, rends le plus explicite et plus simple pour une meilleur visaulite !"]
@@ -59,10 +59,8 @@ function updateScore(){
 
 function updateList(repodata){
   
-  // TODO check if contains readme and adapt message (good or bad) and do that for all the list
+  // check if contains readme and adapt message (good or bad) and do that for all the list
   const readme = document.getElementById('readme-msg');
-
-    //if list contains or not readme then adapt the message
   updateLabel(readme,repodata,'README',readMeComments,'imgReadMe');
 
   const license = document.getElementById('license-msg');

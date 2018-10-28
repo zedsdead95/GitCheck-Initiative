@@ -12,13 +12,38 @@ Le projet est constitué d'une partie [client](https://github.com/zedsdead95/Git
 
 ## Déploiement
 
+Afin de rendre notre application web accessible par n'importe qui sans necessairement devoir l'installer en local, nous avons déployé notre application avec Heroku. Grâce a Heroku, vous pouvez aisément chercher les repositories d'utilisateur GitHub et recevoir un feedback de la qualité de ce repo.
+
+## Installation
+
+Afin d'installer en local le projet il vous suffit de telecharger la partie client [client](https://github.com/zedsdead95/GitCheck-Initiative) puis la partie [serveur](https://github.com/zedsdead95/GitCheck-express-server).
+
+Sur le fichier env.default dans le dossier **src** du serveur il faudra ajouter le token GitHub afin d'effectuer des requetes sur le Github API.
+
+Ensuite il vous suffit d'ouvrir un Terminal et d'entrer la commande	
+
+	npm start
+
+aussi bien dans le dossier contenant la partie client que dans le dossier contenant la partie serveur.
+
 ## Utilisation
 
-Si vous avez lancé projet en local, il vous suffit d'entrer localhost:8080 (ou le port que vous avez défini précédemment) pour accéder au site web. Autrement, le projet est host sur Github pages et accessible avec l'url suivante :
+Si vous avez installé le projet en local et que le serveur est actif,il vous suffit d'entrer localhost:8080 (ou le port que vous avez défini précédemment) pour accéder au site web.
+
+Autrement, le projet est host sur Heroku et accessible avec l'url suivante : [GitCheck](https://heroku...)
+
+## Aperçu de l'application
+
+Voic un aperçu visuel de l'application:
+
+![alt](images/apercu.png)
+
+
+
 
 ## Bonus
 
-### Serveur :
+### Serveur
 
 Nous avons décidé d'utiliser un serveur express qui fera l'intermédiaire entre le client (frontend) et la Github API, ceci principalement pour deux raisons :
 
@@ -32,3 +57,15 @@ Comme expliqué dans le point précédent, nous avons décidé de mettre en plac
 ### Sticky application
 
 Qui n'a jamais eu envie de savoir si des grands ou petits projets respectaient vraiment les bonnes pratiques open source ? Quel développeur ne s'est jamais demandé si son projet avait l'air suffisemment sérieux aux yeux des utilisateurs externes ? Et cela sera-t-il suffisant pour encourager la communauté à y participer, ou manque-t-il des éléments importants qui pourraient non seulement ajouter un aura de dignité au projet mais également montrer des éléments utiles pour le déploiement, l'usage ou encore l'amélioration dudit projet ? Pour le découvrir, n'attendez plus ! Gitcheck initiative est là pour répondre à vos questions et pour vous guider sur le chemin des bonnes pratiques open source.
+
+### UI/UX Effort
+
+1) Well designed application:
+
+Notre application est non seulement utile pour tout membre de la grande communauté qu'est GitHub, la rendant pratique pour estimer la qualité d'un repository mais aussi esthétiquement très agreable avec un background agréable.
+
+2) Agreable user experience:
+
+Le design du site est épuré et le nom du projet "GitCheck" est en parfait accord avec son objectif (checker la qualité d'un repo GitHub) et très évocatif. De plus le slogan choisi est *catchy*, renforcant l'ancrage dans le subconscient des utilisateurs de notre application web.
+
+
