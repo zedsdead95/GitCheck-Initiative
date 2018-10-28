@@ -7,9 +7,7 @@
 
 
 // https://medium.freecodecamp.org/environment-settings-in-javascript-apps-c5f9744282b6
-const baseUrl =  window.location.hostname === 'localhost'
-  ? 'http://localhost:3000'
-  : 'https://heig-vd-ga-server.herokuapp.com';
+const baseUrl = 'https://arcane-wave-60281.herokuapp.com';
 
 const readMeComments = ["Well done ! Your repo does contain a README file."
   ,"Your repository does not contain a README file. README file is essential to enable collaborator to improve your project or just simply help users to follow advices and installation procedure."];
