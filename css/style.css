@@ -8,7 +8,8 @@ html {
 
 body {
   font-family: 'Roboto Mono', monospace;
-  background: #F1F3F4;
+  background-image: url("/images/bg-about.png");
+
 }
 
 * {
@@ -20,9 +21,13 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0 0 0.35em 0;
 }
 
-i {
-  color: rgba(0, 0, 0, 0.54);
+.icon-button {
+  color:white;
+  transform: translate(1100px,-70px);
+  height: 45px;
+  width: 45px;
 }
+
 
 /**
  * Layout
@@ -33,7 +38,7 @@ i {
   display: flex;
   align-items: center;
   padding: 0 16px;
-  background: #fff;
+  background: rgb(18, 22, 22);
   box-shadow: 0px 2px 40px 0px rgba(0,0,0,0.08);
 }
 
@@ -42,8 +47,9 @@ i {
   margin-bottom: 0;
 }
 
+
 .page-content {
-  padding: 24px 16px;
+  padding: 24px 16px;  
 }
 
 .container {
@@ -51,22 +57,57 @@ i {
   margin: 0 auto;
 }
 
+
 .search-bar {
-  padding-left: 12px;
-  padding-right: 4px;
-  border-radius: 2px;
-  display: flex;
-  align-items: center;
   background: rgba(0, 0, 0, 0.03);
 }
 
-.search-input {
-  width: 300px;
+.search-input1 {
+  width: 400px;
+  background: #EA1844;
+  transform: translate(200px);
+}
+
+.search-input2 {
+  width: 400px;
+  background: #EA1844;
+  transform: translate(650px,-35px);
+  font-weight: 300;
+  
+}
+
+input[type="text"]
+{
+    font-size:22px;
+    color: wheat;
+  }
+
+.list-group-item{
+  width: 700px;
+}
+
+.list-group-item-text{
+  height: 0.6em;
+}
+.chart-container{
+  align-content: center;
+  align-items: center;
+}
+
+.list-group{
+  align-items: center;
+  padding-left: 80px;
 }
 
 .logo {
-  height: 32px;
+  height: 80px;
   margin-right: 16px;
+}
+
+.WRLogo{
+  height: 30px;
+  width: 30px;
+  transform: translateX(600px) translateY(-50px);
 }
 
 /**
@@ -100,9 +141,8 @@ i {
  * =========================================
  */
 
-.card {
+ .card {
   padding: 16px;
-  background: #fff;
   border-radius: 2px;
   box-shadow: 0px 2px 40px 0px rgba(0,0,0,0.08);
 }
@@ -137,6 +177,7 @@ i {
 .icon-button {
   padding: 7px;
   border-radius: 50%;
+  color: white;
 }
 
 .chart-container {
@@ -150,14 +191,40 @@ i {
  * =========================================
  */
 .title {
-  font-size: 1.25em;
+  padding-top: 10px;
+  font-size: 1.4em;
   font-weight: 500;
   white-space: nowrap;
+}
+
+.slogan{
+  font-size: 1.8em;
+  font-weight: 500;
+  white-space: nowrap;
+  font-style: oblique;
 }
 
 .headline {
   font-size: 1.5em;
   font-weight: 400;
+  color: black;
+}
+
+header{
+  display: flex;
+  background-color: white;
+}
+
+header div{
+  flex : 10;
+}
+
+.head-question{
+  font-size: 2.2em;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-style: italic;
+  color: rgb(43, 99, 99)
 }
 
 .body-1 {
@@ -166,9 +233,17 @@ i {
 }
 
 .text-secondary {
-  color: rgba(0, 0, 0, 0.54);
+  color: rgba(131, 139, 25, 0.54);
 }
 
 .text-error {
   color: #EA1844;
+}
+
+.credits{
+  color: rgb(43, 99, 99);
+  font: bold;
+  font-family: monospace;
+  text-align: center;
+  font-size: 2.2em;
 }
