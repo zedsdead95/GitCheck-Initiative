@@ -96,7 +96,7 @@ function updateLabel(labelToModify,repodata,info,comment,imageToModify){
   repodata.forEach(word => {
       if (word.includes(info)) {
         labelToModify.innerHTML = comment[0];
-        document.getElementById(imageToModify).src = '/images/true.png';
+        document.getElementById(imageToModify).src = 'images/true.png';
         contains = true;
         score_final += 1;
       }
@@ -104,7 +104,7 @@ function updateLabel(labelToModify,repodata,info,comment,imageToModify){
   // otherwise puts a negative comment
   if (!contains){
     labelToModify.innerHTML = comment[1];
-    document.getElementById(imageToModify).src = '/images/false.png';
+    document.getElementById(imageToModify).src = 'images/false.png';
 
   }
 }
